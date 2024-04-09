@@ -1,0 +1,12 @@
+.a{
+    /* color: rgb(124, 20, 20); */
+    color:black ;
+}
+.b{
+    /* background-color:rgb(207, 178, 166); */
+    background-color: aliceblue;
+}
+
+.content-container {
+    margin-top: calc(20rem + 3px); /* Adjust the value to match the height of your navbar */
+  }
