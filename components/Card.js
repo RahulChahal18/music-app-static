@@ -70,7 +70,7 @@ const Card = ({data,handleClick,index,playing,updatePlaying,songPlayData,songPau
                     </div>
             </button>
         </div>
-        <button onClick={()=>handleClick(index)} className={`px-4 py-3 ${added?"bg-teal-500":"bg-pink-600"}  whitespace-nowrap absolute bottom-0 left-1/2 -translate-x-[50%] translate-y-[50%] text-white text-xs rounded-full transition-all duration-[600ms] ease-in-out delay-10 ${added?"w-32 text-black font-semibold":"w-32"} `}>{added?"Added" :"Add to Favourites"}</button>
+        <button onClick={()=>handleClick(index)} className={`px-4 py-3 ${added?"bg-teal-500":"bg-orange-600"}  whitespace-nowrap absolute bottom-0 left-1/2 -translate-x-[50%] translate-y-[50%] text-white text-xs rounded-full transition-all duration-[600ms] ease-in-out delay-10 ${added?"w-32 text-black font-semibold":"w-32"} `}>{added?"Added" :"Add to Favourites"}</button>
     </div>
     </>
   )
