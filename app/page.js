@@ -54,13 +54,21 @@ const page = () => {
   const [songData,setSongData]=useState(data);
   const [playing,setPlaying] = useState(null);
 
-  function shuffleArray(arr) {
-    return arr.sort(function (a, b) {
-      return Math.random() - 0.5;
-    });
-  }
+  
   useEffect(() => {
     const fetchData = async () => {
+      function shuffleArray(arr) {
+        return arr.sort(function (a, b) {
+          return Math.random() - 0.5;
+        });
+      }
+      // Shuffle the data array and store the shuffled result
+      const shuffledData = shuffleArray(data);
+      
+      // Update the state or variable holding the shuffled data
+      // For example, if you're using state: setData(shuffledData);
+      setSongData(shuffledData);
+      
       const updatedData = await Promise.all(data.map(async (item) => {
         const aud = new Audio(`./sounds/${item.name}.mp3`);
         await aud.load(); // Ensure the audio is loaded
@@ -70,13 +78,6 @@ const page = () => {
     };
 
     fetchData();
-
-    // Shuffle the data array and store the shuffled result
-    const shuffledData = shuffleArray(data);
-    
-    // Update the state or variable holding the shuffled data
-    // For example, if you're using state: setData(shuffledData);
-    setSongData(shuffledData)
   }, []);
 
   // let mus = [new Audio('./sounds/Challenge.mp3'), new Audio('./sounds/Tibeyandaputt.mp3'),new Audio('./sounds/Onelove.mp3'),new Audio('./sounds/Sohigh.mp3')]
